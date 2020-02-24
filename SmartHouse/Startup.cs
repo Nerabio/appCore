@@ -8,10 +8,13 @@ using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
-using SmartHouse.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using AppServices.Services;
+using AppServices.ChainOfResponsibility;
+using Microsoft.Extensions.Logging;
+using DataAccess.Context;
 
 namespace SmartHouse
 {
@@ -27,19 +30,32 @@ namespace SmartHouse
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<DataAccess.Context.ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
 
 
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+            //services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            //    .AddEntityFrameworkStores<DataAccess.Context.ApplicationDbContext>();
+
+            services.AddTransient<IAppService, AppService>();
+
+            services.AddTransient<IHandlerFactory<IMessageParameterHandler>, HandlerFactory<IMessageParameterHandler>>();
+            
+            services.AddTransient<IMessageParameterHandler, NextNameParameterHandler>();
+            services.AddTransient<IMessageParameterHandler, NameParameterHandler>();
+
+            services.AddTransient<IChainCreator<IChainHandler>, ChainCreator<IChainHandler>>();
+            services.AddTransient<IChainHandler, MonkeyHandler>();
+            services.AddTransient<IChainHandler, SquirrelHandler>();
+            services.AddTransient<IChainHandler, DogHandler>();
+
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
@@ -54,6 +70,8 @@ namespace SmartHouse
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            loggerFactory.AddLog4Net();
 
             app.UseRouting();
 

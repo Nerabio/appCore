@@ -78,5 +78,13 @@ C:\Projects\SmartHouse\SmartHouse\bin\Debug\netcoreapp3.0\System.Collections.Imm
 C:\Projects\SmartHouse\SmartHouse\bin\Debug\netcoreapp3.0\System.ComponentModel.Annotations.dll
 C:\Projects\SmartHouse\SmartHouse\bin\Debug\netcoreapp3.0\System.Diagnostics.DiagnosticSource.dll
 C:\Projects\SmartHouse\SmartHouse\bin\Debug\netcoreapp3.0\System.Runtime.CompilerServices.Unsafe.dll
+C:\Projects\SmartHouse\SmartHouse\bin\Debug\netcoreapp3.0\log4net.dll
+C:\Projects\SmartHouse\SmartHouse\bin\Debug\netcoreapp3.0\Logging.dll
+C:\Projects\SmartHouse\SmartHouse\bin\Debug\netcoreapp3.0\Logging.pdb
+C:\Projects\SmartHouse\SmartHouse\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Logging.Log4Net.AspNetCore.dll
 C:\Projects\SmartHouse\SmartHouse\obj\Debug\netcoreapp3.0\SmartHouse.MvcApplicationPartsAssemblyInfo.cs
 C:\Projects\SmartHouse\SmartHouse\obj\Debug\netcoreapp3.0\SmartHouse.MvcApplicationPartsAssemblyInfo.cache
+C:\Projects\SmartHouse\SmartHouse\bin\Debug\netcoreapp3.0\Common.dll
+C:\Projects\SmartHouse\SmartHouse\bin\Debug\netcoreapp3.0\DataAccess.dll
+C:\Projects\SmartHouse\SmartHouse\bin\Debug\netcoreapp3.0\DataAccess.pdb
+C:\Projects\SmartHouse\SmartHouse\bin\Debug\netcoreapp3.0\Common.pdb

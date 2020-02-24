@@ -1,0 +1,8 @@
+C:\Projects\SmartHouse\Logging\bin\Debug\netcoreapp3.0\Logging.deps.json
+C:\Projects\SmartHouse\Logging\bin\Debug\netcoreapp3.0\Logging.dll
+C:\Projects\SmartHouse\Logging\obj\Debug\netcoreapp3.0\Logging.AssemblyInfoInputs.cache
+C:\Projects\SmartHouse\Logging\obj\Debug\netcoreapp3.0\Logging.AssemblyInfo.cs
+C:\Projects\SmartHouse\Logging\bin\Debug\netcoreapp3.0\Logging.pdb
+C:\Projects\SmartHouse\Logging\obj\Debug\netcoreapp3.0\Logging.dll
+C:\Projects\SmartHouse\Logging\obj\Debug\netcoreapp3.0\Logging.pdb
+C:\Projects\SmartHouse\Logging\obj\Debug\netcoreapp3.0\Logging.csprojAssemblyReference.cache
