@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.Mvc;
 
 using SmartHouse.Models;
 using Logging;
+using DataAccess;
+using Common.Entities;
 
 namespace SmartHouse.Controllers
 {
@@ -21,10 +23,14 @@ namespace SmartHouse.Controllers
         private IAppService _appService;
         private readonly IHandlerFactory<IMessageParameterHandler> _parameterHandlerFactory;
         private readonly IChainCreator<IChainHandler> _chainCreator;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public HomeController(IAppService appService, IHandlerFactory<IMessageParameterHandler> parameterHandlerFactory, IChainCreator<IChainHandler> chainCreator)
+        public HomeController(IUnitOfWork unitOfWork, 
+                              IAppService appService, 
+                              IHandlerFactory<IMessageParameterHandler> parameterHandlerFactory, 
+                              IChainCreator<IChainHandler> chainCreator)
         {
-            
+            _unitOfWork = unitOfWork;
             _appService = appService;
             _parameterHandlerFactory = parameterHandlerFactory;
             _chainCreator = chainCreator;
@@ -32,6 +38,9 @@ namespace SmartHouse.Controllers
 
         public IActionResult Index()
         {
+
+            var device = _unitOfWork.GetRepository<Device>().Get(1);
+
             //var handler = _parameterHandlerFactory.GetHandler("xxx");
             //string paramValue = handler.GetValue("sdvsd d sdv s dv sdv s dv sd v ");
             _logger.Debug("Message displayed: fgfgfghfh");

@@ -2,3 +2,10 @@
 **/bin/Debug/
 **/bin/Release/
 **/obj
+.vs
+SmartHouse/bin/
+SmartHouse/.vs/
+DataAccess/obj/
+Common/obj/
+AppDomain/obj/
+SmartHouse/Logs/

@@ -15,6 +15,7 @@ using AppServices.Services;
 using AppServices.ChainOfResponsibility;
 using Microsoft.Extensions.Logging;
 using DataAccess.Context;
+using DataAccess;
 
 namespace SmartHouse
 {
@@ -39,6 +40,9 @@ namespace SmartHouse
             //    .AddEntityFrameworkStores<DataAccess.Context.ApplicationDbContext>();
 
             services.AddTransient<IAppService, AppService>();
+
+
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
 
             services.AddTransient<IHandlerFactory<IMessageParameterHandler>, HandlerFactory<IMessageParameterHandler>>();
             
