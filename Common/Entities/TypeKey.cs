@@ -8,6 +8,6 @@ namespace Common.Entities
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public Key Key { get; set; }
+        public virtual Key Key { get; set; }
     }
 }

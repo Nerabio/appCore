@@ -25,16 +25,21 @@ namespace DataAccess.Context
 
         public ApplicationDbContext()
         {
-            Database.EnsureCreated();
+            //Database.EnsureCreated();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=helloappdb;Trusted_Connection=True;");
+            optionsBuilder.UseLazyLoadingProxies().UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=helloappdb;Trusted_Connection=True;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Device>()
+                .HasMany<SectionKey>(d => d.SectionKey)
+                .WithOne(sk => sk.Device)
+                .HasForeignKey(s => s.DeviceId);
+
             modelBuilder.Entity<SectionKey>()
             .HasOne<Device>(d => d.Device)
             .WithMany(ad => ad.SectionKey)

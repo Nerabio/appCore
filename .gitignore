@@ -1,5 +1,5 @@
 .vs/
-**/bin/Debug/
+/bin
 **/bin/Release/
 **/obj
 .vs
@@ -9,3 +9,7 @@ DataAccess/obj/
 Common/obj/
 AppDomain/obj/
 SmartHouse/Logs/
+*/obj/
+SmartHouse/obj/
+SmartHouse/obj/*
+SmartHouse/obj/

@@ -8,8 +8,8 @@ namespace Common.Entities
     {
         public int Id { get; set; }
         public int DeviceId { get; set; }
-        public Device Device { get; set; }
+        public virtual Device Device { get; set; }
         public string Name { get; set; }
-        public IList<Key> Keys { get; set; }
+        public virtual IList<Key> Keys { get; set; }
     }
 }

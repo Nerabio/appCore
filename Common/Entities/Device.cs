@@ -11,7 +11,7 @@ namespace Common.Entities
         public bool IsConnected { get; set; }
         public string Name { get; set; }
 
-        public IList<SectionKey> SectionKey { get; set; }
+        public virtual IList<SectionKey> SectionKey { get; set; }
 
     }
 }

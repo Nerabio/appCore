@@ -88,3 +88,5 @@ C:\Projects\SmartHouse\SmartHouse\bin\Debug\netcoreapp3.0\Common.dll
 C:\Projects\SmartHouse\SmartHouse\bin\Debug\netcoreapp3.0\DataAccess.dll
 C:\Projects\SmartHouse\SmartHouse\bin\Debug\netcoreapp3.0\DataAccess.pdb
 C:\Projects\SmartHouse\SmartHouse\bin\Debug\netcoreapp3.0\Common.pdb
+C:\Projects\SmartHouse\SmartHouse\bin\Debug\netcoreapp3.0\Castle.Core.dll
+C:\Projects\SmartHouse\SmartHouse\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Proxies.dll

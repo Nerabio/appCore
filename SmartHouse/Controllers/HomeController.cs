@@ -40,9 +40,15 @@ namespace SmartHouse.Controllers
         {
 
             var device = _unitOfWork.GetRepository<Device>().Get(1);
+            var sks = device.SectionKey;
+
+            //var sk = _unitOfWork.GetRepository<SectionKey>().Get(1);
+
+            //var keys = sk.Keys;
 
             //var handler = _parameterHandlerFactory.GetHandler("xxx");
             //string paramValue = handler.GetValue("sdvsd d sdv s dv sdv s dv sd v ");
+
             _logger.Debug("Message displayed: fgfgfghfh");
             var rootElem = _chainCreator.GetChain();
             rootElem.Handle("Nut");
