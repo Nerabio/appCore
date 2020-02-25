@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using SmartHouse.Models;
 using Logging;
 using DataAccess;
-using Common.Entities;
+using DataAccess.Entities;
 
 namespace SmartHouse.Controllers
 {
@@ -39,14 +39,19 @@ namespace SmartHouse.Controllers
         public IActionResult Index()
         {
 
-            //var device = _unitOfWork.GetRepository<Device>().Get(1);
-            //var sectionKeyList = device.SectionKey;
+            var device = _unitOfWork.GetRepository<Device>().Get(1);
+            var sectionKeyList = device.SectionKey;
 
-            //var key = sectionKeyList.FirstOrDefault().Keys.FirstOrDefault(k => k.Id == 1);
+            var key = sectionKeyList.FirstOrDefault().Keys.FirstOrDefault(k => k.Id == 1);
+
+            var valueStr = key.GetValue();
+
+
+            key.SetValue("false");
             //key.ValueString = "123";
 
-            //_unitOfWork.GetRepository<Key>().Update(key);
-            //_unitOfWork.SaveChanges();
+            _unitOfWork.GetRepository<Key>().Update(key);
+            _unitOfWork.SaveChanges();
 
             //var sk = _unitOfWork.GetRepository<SectionKey>().Get(1);
 

@@ -16,6 +16,9 @@ using AppServices.ChainOfResponsibility;
 using Microsoft.Extensions.Logging;
 using DataAccess.Context;
 using DataAccess;
+using Common.Services;
+using AutoMapper;
+using SmartHouse.Mapping;
 
 namespace SmartHouse
 {
@@ -39,10 +42,22 @@ namespace SmartHouse
             //services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
             //    .AddEntityFrameworkStores<DataAccess.Context.ApplicationDbContext>();
 
+            // Auto Mapper Configurations
+            var mappingConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MappingProfile());
+            });
+
+            IMapper mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
+
+
             services.AddTransient<IAppService, AppService>();
 
 
             services.AddTransient<IUnitOfWork, UnitOfWork>();
+            services.AddTransient<IDeviceService, DeviceService>();
+
 
             services.AddTransient<IHandlerFactory<IMessageParameterHandler>, HandlerFactory<IMessageParameterHandler>>();
             
@@ -54,7 +69,8 @@ namespace SmartHouse
             services.AddTransient<IChainHandler, SquirrelHandler>();
             services.AddTransient<IChainHandler, DogHandler>();
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
             services.AddRazorPages();
         }
 
