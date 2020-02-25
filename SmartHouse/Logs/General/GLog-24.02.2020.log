@@ -1,0 +1,513 @@
+2020-02-24 13:22:18 INFO [?.?:?]
+Application started. Press Ctrl+C to shut down.
+
+2020-02-24 13:22:18 INFO [?.?:?]
+Hosting environment: Development
+
+2020-02-24 13:22:18 INFO [?.?:?]
+Content root path: C:\Projects\SmartHouse\SmartHouse
+
+2020-02-24 13:22:19 INFO [?.?:?]
+Request starting HTTP/1.1 GET https://localhost:44319/  
+
+2020-02-24 13:22:19 INFO [?.?:?]
+Executing endpoint 'SmartHouse.Controllers.HomeController.Index (SmartHouse)'
+
+2020-02-24 13:22:19 INFO [?.?:?]
+Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller SmartHouse.Controllers.HomeController (SmartHouse).
+
+2020-02-24 13:25:52 DEBUG [?.?:?]
+Message displayed: fgfgfghfh
+
+2020-02-24 14:03:36 INFO [?.?:?]
+Application started. Press Ctrl+C to shut down.
+
+2020-02-24 14:03:37 INFO [?.?:?]
+Hosting environment: Development
+
+2020-02-24 14:03:37 INFO [?.?:?]
+Content root path: C:\Projects\SmartHouse\SmartHouse
+
+2020-02-24 14:03:37 INFO [?.?:?]
+Request starting HTTP/1.1 GET https://localhost:44319/  
+
+2020-02-24 14:03:37 INFO [?.?:?]
+Executing endpoint 'SmartHouse.Controllers.HomeController.Index (SmartHouse)'
+
+2020-02-24 14:03:37 INFO [?.?:?]
+Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller SmartHouse.Controllers.HomeController (SmartHouse).
+
+2020-02-24 14:17:34 INFO [?.?:?]
+Application started. Press Ctrl+C to shut down.
+
+2020-02-24 14:17:34 INFO [?.?:?]
+Hosting environment: Development
+
+2020-02-24 14:17:34 INFO [?.?:?]
+Content root path: C:\Projects\SmartHouse\SmartHouse
+
+2020-02-24 14:17:34 INFO [?.?:?]
+Request starting HTTP/1.1 GET https://localhost:44319/  
+
+2020-02-24 14:17:34 INFO [?.?:?]
+Executing endpoint 'SmartHouse.Controllers.HomeController.Index (SmartHouse)'
+
+2020-02-24 14:17:35 INFO [?.?:?]
+Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller SmartHouse.Controllers.HomeController (SmartHouse).
+
+2020-02-24 14:20:32 INFO [?.?:?]
+Application started. Press Ctrl+C to shut down.
+
+2020-02-24 14:20:33 INFO [?.?:?]
+Hosting environment: Development
+
+2020-02-24 14:20:33 INFO [?.?:?]
+Content root path: C:\Projects\SmartHouse\SmartHouse
+
+2020-02-24 14:20:34 INFO [?.?:?]
+Request starting HTTP/1.1 GET https://localhost:44319/  
+
+2020-02-24 14:20:34 INFO [?.?:?]
+Executing endpoint 'SmartHouse.Controllers.HomeController.Index (SmartHouse)'
+
+2020-02-24 14:20:35 INFO [?.?:?]
+Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller SmartHouse.Controllers.HomeController (SmartHouse).
+
+2020-02-24 14:26:50 INFO [?.?:?]
+Application started. Press Ctrl+C to shut down.
+
+2020-02-24 14:26:50 INFO [?.?:?]
+Hosting environment: Development
+
+2020-02-24 14:26:50 INFO [?.?:?]
+Content root path: C:\Projects\SmartHouse\SmartHouse
+
+2020-02-24 14:26:50 INFO [?.?:?]
+Request starting HTTP/1.1 GET https://localhost:44319/  
+
+2020-02-24 14:26:50 INFO [?.?:?]
+Executing endpoint 'SmartHouse.Controllers.HomeController.Index (SmartHouse)'
+
+2020-02-24 14:26:50 INFO [?.?:?]
+Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller SmartHouse.Controllers.HomeController (SmartHouse).
+
+2020-02-24 14:44:49 INFO [?.?:?]
+Application started. Press Ctrl+C to shut down.
+
+2020-02-24 14:44:49 INFO [?.?:?]
+Hosting environment: Development
+
+2020-02-24 14:44:49 INFO [?.?:?]
+Content root path: C:\Projects\SmartHouse\SmartHouse
+
+2020-02-24 14:44:49 INFO [?.?:?]
+Request starting HTTP/1.1 GET https://localhost:44319/  
+
+2020-02-24 14:44:49 INFO [?.?:?]
+Executing endpoint 'SmartHouse.Controllers.HomeController.Index (SmartHouse)'
+
+2020-02-24 14:44:49 INFO [?.?:?]
+Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller SmartHouse.Controllers.HomeController (SmartHouse).
+
+2020-02-24 14:48:38 INFO [?.?:?]
+Application started. Press Ctrl+C to shut down.
+
+2020-02-24 14:48:38 INFO [?.?:?]
+Hosting environment: Development
+
+2020-02-24 14:48:38 INFO [?.?:?]
+Content root path: C:\Projects\SmartHouse\SmartHouse
+
+2020-02-24 14:48:38 INFO [?.?:?]
+Request starting HTTP/1.1 GET https://localhost:44319/  
+
+2020-02-24 14:48:38 INFO [?.?:?]
+Executing endpoint 'SmartHouse.Controllers.HomeController.Index (SmartHouse)'
+
+2020-02-24 14:48:38 INFO [?.?:?]
+Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller SmartHouse.Controllers.HomeController (SmartHouse).
+
+2020-02-24 14:49:07 INFO [?.?:?]
+Executed action SmartHouse.Controllers.HomeController.Index (SmartHouse) in 28697.6994ms
+
+2020-02-24 14:49:07 INFO [?.?:?]
+Executed endpoint 'SmartHouse.Controllers.HomeController.Index (SmartHouse)'
+
+2020-02-24 14:49:08 INFO [?.?:?]
+Request finished in 29851.6525ms 500 text/html; charset=utf-8
+
+2020-02-24 14:49:56 INFO [?.?:?]
+Application started. Press Ctrl+C to shut down.
+
+2020-02-24 14:49:56 INFO [?.?:?]
+Hosting environment: Development
+
+2020-02-24 14:49:56 INFO [?.?:?]
+Content root path: C:\Projects\SmartHouse\SmartHouse
+
+2020-02-24 14:49:56 INFO [?.?:?]
+Request starting HTTP/1.1 GET https://localhost:44319/  
+
+2020-02-24 14:49:56 INFO [?.?:?]
+Executing endpoint 'SmartHouse.Controllers.HomeController.Index (SmartHouse)'
+
+2020-02-24 14:49:56 INFO [?.?:?]
+Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller SmartHouse.Controllers.HomeController (SmartHouse).
+
+2020-02-24 14:52:48 INFO [?.?:?]
+Application started. Press Ctrl+C to shut down.
+
+2020-02-24 14:52:48 INFO [?.?:?]
+Hosting environment: Development
+
+2020-02-24 14:52:48 INFO [?.?:?]
+Content root path: C:\Projects\SmartHouse\SmartHouse
+
+2020-02-24 14:52:48 INFO [?.?:?]
+Request starting HTTP/1.1 GET https://localhost:44319/  
+
+2020-02-24 14:52:48 INFO [?.?:?]
+Executing endpoint 'SmartHouse.Controllers.HomeController.Index (SmartHouse)'
+
+2020-02-24 14:52:49 INFO [?.?:?]
+Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller SmartHouse.Controllers.HomeController (SmartHouse).
+
+2020-02-24 14:58:07 INFO [?.?:?]
+Application started. Press Ctrl+C to shut down.
+
+2020-02-24 14:58:07 INFO [?.?:?]
+Hosting environment: Development
+
+2020-02-24 14:58:08 INFO [?.?:?]
+Content root path: C:\Projects\SmartHouse\SmartHouse
+
+2020-02-24 14:58:08 INFO [?.?:?]
+Request starting HTTP/1.1 GET https://localhost:44319/  
+
+2020-02-24 14:58:08 INFO [?.?:?]
+Executing endpoint 'SmartHouse.Controllers.HomeController.Index (SmartHouse)'
+
+2020-02-24 14:58:08 INFO [?.?:?]
+Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller SmartHouse.Controllers.HomeController (SmartHouse).
+
+2020-02-24 22:12:02 INFO [?.?:?]
+Application started. Press Ctrl+C to shut down.
+
+2020-02-24 22:12:02 INFO [?.?:?]
+Hosting environment: Development
+
+2020-02-24 22:12:03 INFO [?.?:?]
+Content root path: C:\Projects\SmartHouse\SmartHouse
+
+2020-02-24 22:12:03 INFO [?.?:?]
+Request starting HTTP/1.1 GET https://localhost:44319/  
+
+2020-02-24 22:12:03 INFO [?.?:?]
+Executing endpoint 'SmartHouse.Controllers.HomeController.Index (SmartHouse)'
+
+2020-02-24 22:12:03 INFO [?.?:?]
+Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller SmartHouse.Controllers.HomeController (SmartHouse).
+
+2020-02-24 22:12:53 INFO [?.?:?]
+Application started. Press Ctrl+C to shut down.
+
+2020-02-24 22:12:53 INFO [?.?:?]
+Hosting environment: Development
+
+2020-02-24 22:12:53 INFO [?.?:?]
+Content root path: C:\Projects\SmartHouse\SmartHouse
+
+2020-02-24 22:12:54 INFO [?.?:?]
+Request starting HTTP/1.1 GET https://localhost:44319/  
+
+2020-02-24 22:12:54 INFO [?.?:?]
+Executing endpoint 'SmartHouse.Controllers.HomeController.Index (SmartHouse)'
+
+2020-02-24 22:12:55 INFO [?.?:?]
+Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller SmartHouse.Controllers.HomeController (SmartHouse).
+
+2020-02-24 22:24:04 INFO [?.?:?]
+Application started. Press Ctrl+C to shut down.
+
+2020-02-24 22:24:04 INFO [?.?:?]
+Hosting environment: Development
+
+2020-02-24 22:24:04 INFO [?.?:?]
+Content root path: C:\Projects\SmartHouse\SmartHouse
+
+2020-02-24 22:24:04 INFO [?.?:?]
+Request starting HTTP/1.1 GET https://localhost:44319/  
+
+2020-02-24 22:24:04 INFO [?.?:?]
+Executing endpoint 'SmartHouse.Controllers.HomeController.Index (SmartHouse)'
+
+2020-02-24 22:24:05 INFO [?.?:?]
+Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller SmartHouse.Controllers.HomeController (SmartHouse).
+
+2020-02-24 22:26:11 INFO [?.?:?]
+Application started. Press Ctrl+C to shut down.
+
+2020-02-24 22:26:11 INFO [?.?:?]
+Hosting environment: Development
+
+2020-02-24 22:26:11 INFO [?.?:?]
+Content root path: C:\Projects\SmartHouse\SmartHouse
+
+2020-02-24 22:26:11 INFO [?.?:?]
+Request starting HTTP/1.1 GET https://localhost:44319/  
+
+2020-02-24 22:26:11 INFO [?.?:?]
+Executing endpoint 'SmartHouse.Controllers.HomeController.Index (SmartHouse)'
+
+2020-02-24 22:26:11 INFO [?.?:?]
+Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller SmartHouse.Controllers.HomeController (SmartHouse).
+
+2020-02-24 22:38:29 INFO [?.?:?]
+Application started. Press Ctrl+C to shut down.
+
+2020-02-24 22:38:29 INFO [?.?:?]
+Hosting environment: Development
+
+2020-02-24 22:38:29 INFO [?.?:?]
+Content root path: C:\Projects\SmartHouse\SmartHouse
+
+2020-02-24 22:38:29 INFO [?.?:?]
+Request starting HTTP/1.1 GET https://localhost:44319/  
+
+2020-02-24 22:38:30 INFO [?.?:?]
+Executing endpoint 'SmartHouse.Controllers.HomeController.Index (SmartHouse)'
+
+2020-02-24 22:38:30 INFO [?.?:?]
+Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller SmartHouse.Controllers.HomeController (SmartHouse).
+
+2020-02-24 22:57:46 INFO [?.?:?]
+Application started. Press Ctrl+C to shut down.
+
+2020-02-24 22:57:46 INFO [?.?:?]
+Hosting environment: Development
+
+2020-02-24 22:57:46 INFO [?.?:?]
+Content root path: C:\Projects\SmartHouse\SmartHouse
+
+2020-02-24 22:57:46 INFO [?.?:?]
+Request starting HTTP/1.1 GET https://localhost:44319/  
+
+2020-02-24 22:57:46 INFO [?.?:?]
+Executing endpoint 'SmartHouse.Controllers.HomeController.Index (SmartHouse)'
+
+2020-02-24 22:57:47 INFO [?.?:?]
+Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller SmartHouse.Controllers.HomeController (SmartHouse).
+
+2020-02-24 22:58:44 DEBUG [?.?:?]
+Message displayed: fgfgfghfh
+
+2020-02-24 22:59:18 INFO [?.?:?]
+Executing ViewResult, running view Index.
+
+2020-02-24 22:59:21 INFO [?.?:?]
+Executed action SmartHouse.Controllers.HomeController.Index (SmartHouse) in 94285.1878ms
+
+2020-02-24 22:59:21 INFO [?.?:?]
+Executed endpoint 'SmartHouse.Controllers.HomeController.Index (SmartHouse)'
+
+2020-02-24 22:59:21 INFO [?.?:?]
+Request finished in 95122.7313ms 500 text/html; charset=utf-8
+
+2020-02-24 23:01:38 INFO [?.?:?]
+Application started. Press Ctrl+C to shut down.
+
+2020-02-24 23:01:38 INFO [?.?:?]
+Hosting environment: Development
+
+2020-02-24 23:01:38 INFO [?.?:?]
+Content root path: C:\Projects\SmartHouse\SmartHouse
+
+2020-02-24 23:01:39 INFO [?.?:?]
+Request starting HTTP/1.1 GET https://localhost:44319/  
+
+2020-02-24 23:01:39 INFO [?.?:?]
+Executing endpoint 'SmartHouse.Controllers.HomeController.Index (SmartHouse)'
+
+2020-02-24 23:01:39 INFO [?.?:?]
+Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller SmartHouse.Controllers.HomeController (SmartHouse).
+
+2020-02-24 23:07:57 INFO [?.?:?]
+Executing ViewResult, running view Index.
+
+2020-02-24 23:08:01 INFO [?.?:?]
+Executed action SmartHouse.Controllers.HomeController.Index (SmartHouse) in 381684.2971ms
+
+2020-02-24 23:08:01 INFO [?.?:?]
+Executed endpoint 'SmartHouse.Controllers.HomeController.Index (SmartHouse)'
+
+2020-02-24 23:08:02 INFO [?.?:?]
+Request finished in 382699.2327ms 500 text/html; charset=utf-8
+
+2020-02-24 23:09:06 INFO [?.?:?]
+Application started. Press Ctrl+C to shut down.
+
+2020-02-24 23:09:06 INFO [?.?:?]
+Hosting environment: Development
+
+2020-02-24 23:09:06 INFO [?.?:?]
+Content root path: C:\Projects\SmartHouse\SmartHouse
+
+2020-02-24 23:09:06 INFO [?.?:?]
+Request starting HTTP/1.1 GET https://localhost:44319/  
+
+2020-02-24 23:09:06 INFO [?.?:?]
+Executing endpoint 'SmartHouse.Controllers.HomeController.Index (SmartHouse)'
+
+2020-02-24 23:09:07 INFO [?.?:?]
+Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller SmartHouse.Controllers.HomeController (SmartHouse).
+
+2020-02-24 23:09:13 INFO [?.?:?]
+Executing ViewResult, running view Index.
+
+2020-02-24 23:09:15 INFO [?.?:?]
+Executed action SmartHouse.Controllers.HomeController.Index (SmartHouse) in 8713.9904ms
+
+2020-02-24 23:09:15 INFO [?.?:?]
+Executed endpoint 'SmartHouse.Controllers.HomeController.Index (SmartHouse)'
+
+2020-02-24 23:09:16 INFO [?.?:?]
+Request finished in 9900.6453ms 500 text/html; charset=utf-8
+
+2020-02-24 23:09:42 INFO [?.?:?]
+Application started. Press Ctrl+C to shut down.
+
+2020-02-24 23:09:43 INFO [?.?:?]
+Hosting environment: Development
+
+2020-02-24 23:09:43 INFO [?.?:?]
+Content root path: C:\Projects\SmartHouse\SmartHouse
+
+2020-02-24 23:09:43 INFO [?.?:?]
+Request starting HTTP/1.1 GET https://localhost:44319/  
+
+2020-02-24 23:09:43 INFO [?.?:?]
+Executing endpoint 'SmartHouse.Controllers.HomeController.Index (SmartHouse)'
+
+2020-02-24 23:09:43 INFO [?.?:?]
+Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller SmartHouse.Controllers.HomeController (SmartHouse).
+
+2020-02-24 23:11:58 INFO [?.?:?]
+Executing ViewResult, running view Index.
+
+2020-02-24 23:12:00 INFO [?.?:?]
+Executed action SmartHouse.Controllers.HomeController.Index (SmartHouse) in 136469.08120000002ms
+
+2020-02-24 23:12:00 INFO [?.?:?]
+Executed endpoint 'SmartHouse.Controllers.HomeController.Index (SmartHouse)'
+
+2020-02-24 23:12:00 INFO [?.?:?]
+Request finished in 137494.8684ms 500 text/html; charset=utf-8
+
+2020-02-24 23:14:48 INFO [?.?:?]
+Application started. Press Ctrl+C to shut down.
+
+2020-02-24 23:14:48 INFO [?.?:?]
+Hosting environment: Development
+
+2020-02-24 23:14:48 INFO [?.?:?]
+Content root path: C:\Projects\SmartHouse\SmartHouse
+
+2020-02-24 23:14:48 INFO [?.?:?]
+Request starting HTTP/1.1 GET https://localhost:44319/  
+
+2020-02-24 23:14:48 INFO [?.?:?]
+Executing endpoint 'SmartHouse.Controllers.HomeController.Index (SmartHouse)'
+
+2020-02-24 23:14:48 INFO [?.?:?]
+Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller SmartHouse.Controllers.HomeController (SmartHouse).
+
+2020-02-24 23:14:52 INFO [?.?:?]
+Executing ViewResult, running view Index.
+
+2020-02-24 23:14:53 INFO [?.?:?]
+Executed action SmartHouse.Controllers.HomeController.Index (SmartHouse) in 4457.8985ms
+
+2020-02-24 23:14:53 INFO [?.?:?]
+Executed endpoint 'SmartHouse.Controllers.HomeController.Index (SmartHouse)'
+
+2020-02-24 23:14:54 INFO [?.?:?]
+Request finished in 5469.7435000000005ms 500 text/html; charset=utf-8
+
+2020-02-24 23:18:08 INFO [?.?:?]
+Application started. Press Ctrl+C to shut down.
+
+2020-02-24 23:18:08 INFO [?.?:?]
+Hosting environment: Development
+
+2020-02-24 23:18:08 INFO [?.?:?]
+Content root path: C:\Projects\SmartHouse\SmartHouse
+
+2020-02-24 23:18:08 INFO [?.?:?]
+Request starting HTTP/1.1 GET https://localhost:44319/  
+
+2020-02-24 23:18:08 INFO [?.?:?]
+Executing endpoint 'SmartHouse.Controllers.HomeController.Index (SmartHouse)'
+
+2020-02-24 23:18:09 INFO [?.?:?]
+Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller SmartHouse.Controllers.HomeController (SmartHouse).
+
+2020-02-24 23:18:09 INFO [?.?:?]
+Executing ViewResult, running view Index.
+
+2020-02-24 23:18:10 INFO [?.?:?]
+Executed ViewResult - view Index executed in 651.0062ms.
+
+2020-02-24 23:18:10 INFO [?.?:?]
+Executed action SmartHouse.Controllers.HomeController.Index (SmartHouse) in 1089.8202ms
+
+2020-02-24 23:18:10 INFO [?.?:?]
+Request starting HTTP/1.1 GET https://localhost:44319/css/site.css  
+
+2020-02-24 23:18:10 INFO [?.?:?]
+Executed endpoint 'SmartHouse.Controllers.HomeController.Index (SmartHouse)'
+
+2020-02-24 23:18:10 INFO [?.?:?]
+Request finished in 1998.3038000000001ms 200 text/html; charset=utf-8
+
+2020-02-24 23:18:10 INFO [?.?:?]
+The file /css/site.css was not modified
+
+2020-02-24 23:18:10 INFO [?.?:?]
+Request finished in 183.3625ms 304 text/css
+
+2020-02-24 23:18:10 INFO [?.?:?]
+Request starting HTTP/1.1 GET https://localhost:44319/lib/jquery/dist/jquery.min.js  
+
+2020-02-24 23:18:11 INFO [?.?:?]
+The file /lib/jquery/dist/jquery.min.js was not modified
+
+2020-02-24 23:18:11 INFO [?.?:?]
+Request starting HTTP/1.1 GET https://localhost:44319/lib/bootstrap/dist/js/bootstrap.bundle.min.js  
+
+2020-02-24 23:18:11 INFO [?.?:?]
+Request finished in 57.7308ms 304 application/javascript
+
+2020-02-24 23:18:11 INFO [?.?:?]
+The file /lib/bootstrap/dist/js/bootstrap.bundle.min.js was not modified
+
+2020-02-24 23:18:11 INFO [?.?:?]
+Request starting HTTP/1.1 GET https://localhost:44319/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0  
+
+2020-02-24 23:18:11 INFO [?.?:?]
+Request finished in 131.1792ms 304 application/javascript
+
+2020-02-24 23:18:11 INFO [?.?:?]
+Request starting HTTP/1.1 GET https://localhost:44319/lib/bootstrap/dist/css/bootstrap.min.css  
+
+2020-02-24 23:18:11 INFO [?.?:?]
+The file /js/site.js was not modified
+
+2020-02-24 23:18:11 INFO [?.?:?]
+The file /lib/bootstrap/dist/css/bootstrap.min.css was not modified
+
+2020-02-24 23:18:11 INFO [?.?:?]
+Request finished in 155.0937ms 304 application/javascript
+
+2020-02-24 23:18:11 INFO [?.?:?]
+Request finished in 56.980900000000005ms 304 text/css
+

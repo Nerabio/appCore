@@ -39,8 +39,14 @@ namespace SmartHouse.Controllers
         public IActionResult Index()
         {
 
-            var device = _unitOfWork.GetRepository<Device>().Get(1);
-            var sks = device.SectionKey;
+            //var device = _unitOfWork.GetRepository<Device>().Get(1);
+            //var sectionKeyList = device.SectionKey;
+
+            //var key = sectionKeyList.FirstOrDefault().Keys.FirstOrDefault(k => k.Id == 1);
+            //key.ValueString = "123";
+
+            //_unitOfWork.GetRepository<Key>().Update(key);
+            //_unitOfWork.SaveChanges();
 
             //var sk = _unitOfWork.GetRepository<SectionKey>().Get(1);
 
@@ -49,9 +55,9 @@ namespace SmartHouse.Controllers
             //var handler = _parameterHandlerFactory.GetHandler("xxx");
             //string paramValue = handler.GetValue("sdvsd d sdv s dv sdv s dv sd v ");
 
-            _logger.Debug("Message displayed: fgfgfghfh");
-            var rootElem = _chainCreator.GetChain();
-            rootElem.Handle("Nut");
+            //_logger.Debug("Message displayed: fgfgfghfh");
+            //var rootElem = _chainCreator.GetChain();
+            //rootElem.Handle("Nut");
 
 
             //var monkey = new MonkeyHandler();
@@ -61,7 +67,7 @@ namespace SmartHouse.Controllers
             //var rootElem = obj.getChainRootElement();
             //rootElem.Handle("Nut");
 
-            var strOut = _appService.Send();
+            //var strOut = _appService.Send();
             return View();
         }
 
