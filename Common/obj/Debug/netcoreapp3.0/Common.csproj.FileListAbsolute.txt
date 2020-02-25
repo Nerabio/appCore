@@ -1,8 +1,0 @@
-C:\Projects\SmartHouse\Common\bin\Debug\netcoreapp3.0\Common.deps.json
-C:\Projects\SmartHouse\Common\bin\Debug\netcoreapp3.0\Common.dll
-C:\Projects\SmartHouse\Common\bin\Debug\netcoreapp3.0\Common.pdb
-C:\Projects\SmartHouse\Common\obj\Debug\netcoreapp3.0\Common.csprojAssemblyReference.cache
-C:\Projects\SmartHouse\Common\obj\Debug\netcoreapp3.0\Common.AssemblyInfoInputs.cache
-C:\Projects\SmartHouse\Common\obj\Debug\netcoreapp3.0\Common.AssemblyInfo.cs
-C:\Projects\SmartHouse\Common\obj\Debug\netcoreapp3.0\Common.dll
-C:\Projects\SmartHouse\Common\obj\Debug\netcoreapp3.0\Common.pdb

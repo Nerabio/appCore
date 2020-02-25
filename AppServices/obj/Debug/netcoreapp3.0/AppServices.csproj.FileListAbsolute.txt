@@ -1,8 +1,0 @@
-C:\Projects\SmartHouse\AppServices\bin\Debug\netcoreapp3.0\AppServices.deps.json
-C:\Projects\SmartHouse\AppServices\bin\Debug\netcoreapp3.0\AppServices.dll
-C:\Projects\SmartHouse\AppServices\bin\Debug\netcoreapp3.0\AppServices.pdb
-C:\Projects\SmartHouse\AppServices\obj\Debug\netcoreapp3.0\AppServices.csprojAssemblyReference.cache
-C:\Projects\SmartHouse\AppServices\obj\Debug\netcoreapp3.0\AppServices.AssemblyInfoInputs.cache
-C:\Projects\SmartHouse\AppServices\obj\Debug\netcoreapp3.0\AppServices.AssemblyInfo.cs
-C:\Projects\SmartHouse\AppServices\obj\Debug\netcoreapp3.0\AppServices.dll
-C:\Projects\SmartHouse\AppServices\obj\Debug\netcoreapp3.0\AppServices.pdb
