@@ -1,6 +1,7 @@
 .vs/
-/bin
+**/bin/Debug/
 **/bin/Release/
+<<<<<<< HEAD
 **/obj
 .vs
 SmartHouse/bin/
@@ -102,3 +103,7 @@ SmartHouse/obj/SmartHouse.csproj.nuget.cache
 SmartHouse/obj/SmartHouse.csproj.nuget.dgspec.json
 SmartHouse/obj/SmartHouse.csproj.nuget.g.props
 SmartHouse/obj/project.assets.json
+=======
+**/bin/
+**/bin/
+>>>>>>> 3b0833e110472a6142db8d1fd3a2ac7700c1ad01
