@@ -16,7 +16,7 @@ namespace Common.Services
             _unitOfWork = unitOfWork;
         }
 
-        public IList<Device> getDevices()
+        public IList<Device> GetDevices()
         {
             return _unitOfWork
                 .GetRepository<Device>()
@@ -24,5 +24,13 @@ namespace Common.Services
                 .All()
                 .ToList();
         }
+
+        public Device GetDevice(int deviceId)
+        {
+            return _unitOfWork
+                .GetRepository<Device>()
+                .Find(d => d.Id == deviceId);
+        }
+
     }
 }

@@ -7,6 +7,7 @@ namespace Common.Services
 {
     public interface IDeviceService
     {
-        IList<Device> getDevices();
+        IList<Device> GetDevices();
+        Device GetDevice(int deviceId);
     }
 }

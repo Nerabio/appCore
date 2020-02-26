@@ -8,6 +8,7 @@ using DataAccess;
 using DataAccess.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SmartHouse.Models;
 
 namespace SmartHouse.Areas.WebApi.Controllers
 {
@@ -29,15 +30,17 @@ namespace SmartHouse.Areas.WebApi.Controllers
         [HttpGet]
         public IList<Device> Get()
         {
-            var devicesList = _deviceService.getDevices();
+            var devicesList = _deviceService.GetDevices();
             return devicesList;
         }
 
         // GET: api/Device/5
         [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        public DeviceViewModel Get(int id)
         {
-            return "value";
+            var device =  _deviceService.GetDevice(id);
+            var dvm = _mapper.Map<DeviceViewModel>(device);
+            return dvm;
         }
 
         // POST: api/Device
