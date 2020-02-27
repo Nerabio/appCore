@@ -28,10 +28,11 @@ namespace SmartHouse.Areas.WebApi.Controllers
 
         // GET: api/Device
         [HttpGet]
-        public IList<Device> Get()
+        public IList<DeviceViewModel> Get()
         {
             var devicesList = _deviceService.GetDevices();
-            return devicesList;
+            return devicesList.Select(d => _mapper.Map<DeviceViewModel>(d)).ToList();
+
         }
 
         // GET: api/Device/5
