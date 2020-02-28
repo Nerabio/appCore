@@ -1,6 +1,7 @@
 ﻿using DataAccess.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace DataAccess.Entities
@@ -18,6 +19,10 @@ namespace DataAccess.Entities
         public int? ValueInteger { get; set; }
         public bool? ValueBoolean { get; set; }
         public string Description { get; set; }
+
+        [Timestamp]
+        public byte[] TimeStamp { get; set; }
+
         public string GetValue()
         {
             switch (this.TypeKeyValueId) {
