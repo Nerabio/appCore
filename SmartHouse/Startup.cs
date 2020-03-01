@@ -19,6 +19,7 @@ using DataAccess;
 using Common.Services;
 using AutoMapper;
 using SmartHouse.Mapping;
+using Microsoft.AspNetCore.Cors;
 
 namespace SmartHouse
 {
@@ -37,6 +38,12 @@ namespace SmartHouse
             services.AddDbContext<DataAccess.Context.ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddCors(options => options.AddPolicy("AllowLocalhost4200", builder => builder
+                .WithOrigins("http://localhost:4200")
+                .AllowAnyHeader()
+                .AllowAnyMethod())
+           );
 
 
             //services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
@@ -77,6 +84,8 @@ namespace SmartHouse
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
+            app.UseCors("AllowLocalhost4200");
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -94,6 +103,8 @@ namespace SmartHouse
             loggerFactory.AddLog4Net();
 
             app.UseRouting();
+
+
 
             //app.UseAuthentication();
             //app.UseAuthorization();
