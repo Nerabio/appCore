@@ -22,7 +22,8 @@ namespace DataAccess.Entities
 
         [Timestamp]
         public byte[] TimeStamp { get; set; }
-
+        public virtual IList<DeviceRelation> RelationOut { get; set; }
+        public virtual IList<DeviceRelation> RelationIn { get; set; }
         public string GetValue()
         {
             switch (this.TypeKeyValueId) {

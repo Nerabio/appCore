@@ -16,6 +16,8 @@ namespace DataAccess.Context
         public DbSet<Key> Keys { get; set; }
         public DbSet<TypeKey> TypeKeys { get; set; }
         public DbSet<TypeKeyValue> TypeKeyValues { get; set; }
+        public DbSet<DeviceRelation> DeviceRelations { get; set; }
+
 
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
@@ -62,6 +64,31 @@ namespace DataAccess.Context
             .HasOne<TypeKeyValue>(k => k.TypeKeyValue)
             .WithOne(tv => tv.Key)
             .HasForeignKey<Key>(k => k.TypeKeyValueId);
+
+            //modelBuilder.Entity<DeviceRelation>().HasKey(sc => new { sc.DeviceInId, sc.KeyInId, sc.DeviceOutId, sc.KeyOutId });
+            modelBuilder.Entity<Device>()
+                .HasMany<DeviceRelation>(d => d.RelationIn)
+                .WithOne(dr => dr.DeviceIn)
+                .OnDelete(DeleteBehavior.NoAction)
+                .HasForeignKey(dr => dr.DeviceInId);
+
+            modelBuilder.Entity<Device>()
+                .HasMany<DeviceRelation>(d => d.RelationOut)
+                .WithOne(dr => dr.DeviceOut)
+                .OnDelete(DeleteBehavior.NoAction)
+                .HasForeignKey(dr => dr.DeviceOutId);
+
+            modelBuilder.Entity<Key>()
+                .HasMany<DeviceRelation>(k => k.RelationIn)
+                .WithOne(dr => dr.KeyIn)
+                .OnDelete(DeleteBehavior.NoAction)
+                .HasForeignKey(dr => dr.KeyInId);
+
+            modelBuilder.Entity<Key>()
+                .HasMany<DeviceRelation>(k => k.RelationOut)
+                .WithOne(dr => dr.KeyOut)
+                .OnDelete(DeleteBehavior.NoAction)
+                .HasForeignKey(dr => dr.KeyOutId);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace DataAccess.Entities
@@ -13,5 +14,7 @@ namespace DataAccess.Entities
 
         public virtual IList<SectionKey> SectionKey { get; set; }
 
+        public virtual IList<DeviceRelation> RelationOut { get; set; }
+        public virtual IList<DeviceRelation> RelationIn { get; set; }
     }
 }
