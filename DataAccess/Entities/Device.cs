@@ -16,5 +16,6 @@ namespace DataAccess.Entities
 
         public virtual IList<DeviceRelation> RelationOut { get; set; }
         public virtual IList<DeviceRelation> RelationIn { get; set; }
+        public virtual IList<Task> Tasks { get; set; }
     }
 }

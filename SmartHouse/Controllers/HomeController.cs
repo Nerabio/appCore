@@ -47,7 +47,7 @@ namespace SmartHouse.Controllers
             var valueStr = key.GetValue();
 
 
-            key.SetValue("false");
+            //key.SetValue("false");
             //key.ValueString = "123";
 
             _unitOfWork.GetRepository<Key>().Update(key);

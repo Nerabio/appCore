@@ -17,7 +17,9 @@ namespace DataAccess.Context
         public DbSet<TypeKey> TypeKeys { get; set; }
         public DbSet<TypeKeyValue> TypeKeyValues { get; set; }
         public DbSet<DeviceRelation> DeviceRelations { get; set; }
-
+        public DbSet<TaskStatus> TaskStatus { get; set; }
+        public DbSet<Task> Tasks { get; set; }
+        
 
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
@@ -89,6 +91,18 @@ namespace DataAccess.Context
                 .WithOne(dr => dr.KeyOut)
                 .OnDelete(DeleteBehavior.NoAction)
                 .HasForeignKey(dr => dr.KeyOutId);
+
+            modelBuilder.Entity<Task>()
+                .HasOne<TaskStatus>(t => t.TaskStatus)
+                .WithOne(ts => ts.Task)
+                .OnDelete(DeleteBehavior.NoAction)
+                .HasForeignKey<Task>(t => t.TaskStatusId);
+
+            modelBuilder.Entity<Device>()
+                .HasMany<Task>(d => d.Tasks)
+                .WithOne(t => t.Device)
+                .OnDelete(DeleteBehavior.NoAction)
+                .HasForeignKey(t => t.DeviceId);
         }
     }
 }
