@@ -28,6 +28,7 @@ namespace SmartHouse.Mapping
                         Description = k.Description, 
                         TypeKey = k.TypeKey.Name, 
                         TypeKeyValue = k.TypeKeyValue.Name,
+                        Name = k.Name,
                         Value = k.GetValue()
                     }).ToList()
                 }).ToList()));

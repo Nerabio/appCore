@@ -32,5 +32,21 @@ namespace Common.Services
                 .Find(d => d.Id == deviceId);
         }
 
+        public void DeviceTurnOff(int deviceId) 
+        {
+            var device = this.GetDevice(deviceId);
+            device.IsActive = false;
+            _unitOfWork.GetRepository<Device>().Update(device);
+            _unitOfWork.SaveChanges();
+        }
+
+        public void DeviceTurnOn(int deviceId)
+        {
+            var device = this.GetDevice(deviceId);
+            device.IsActive = true;
+            _unitOfWork.GetRepository<Device>().Update(device);
+            _unitOfWork.SaveChanges();
+        }
+
     }
 }

@@ -9,5 +9,7 @@ namespace Common.Services
     {
         IList<Device> GetDevices();
         Device GetDevice(int deviceId);
+        void DeviceTurnOff(int deviceId);
+        void DeviceTurnOn(int deviceId);
     }
 }

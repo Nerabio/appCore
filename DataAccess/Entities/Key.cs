@@ -9,6 +9,7 @@ namespace DataAccess.Entities
     public class Key
     {
         public int Id { get; set; }
+        public string Name { get; set; }
         public int SectionKeyId { get; set; }
         public virtual SectionKey SectionKey { get; set; }
         public int TypeKeyValueId { get; set; }

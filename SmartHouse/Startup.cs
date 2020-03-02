@@ -20,6 +20,7 @@ using Common.Services;
 using AutoMapper;
 using SmartHouse.Mapping;
 using Microsoft.AspNetCore.Cors;
+using System.Web.Http;
 
 namespace SmartHouse
 {

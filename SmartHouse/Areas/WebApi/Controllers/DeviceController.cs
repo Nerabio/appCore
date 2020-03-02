@@ -32,8 +32,21 @@ namespace SmartHouse.Areas.WebApi.Controllers
         {
             var devicesList = _deviceService.GetDevices();
             return devicesList.Select(d => _mapper.Map<DeviceViewModel>(d)).ToList();
-
         }
+
+
+        [HttpGet("/api/device/turnOff/{id}", Name = "Device_turnOff")]
+        public void turnOff(int id)
+        {
+            _deviceService.DeviceTurnOff(id);        
+        }
+
+        [HttpGet("/api/device/turnOn/{id}", Name = "Device_turnOn")]
+        public void turnOn(int id)
+        {
+            _deviceService.DeviceTurnOn(id);
+        }
+
 
         // GET: api/Device/5
         [HttpGet("{id}", Name = "Get")]

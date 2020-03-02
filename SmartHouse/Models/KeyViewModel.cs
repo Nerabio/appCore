@@ -11,6 +11,7 @@ namespace SmartHouse.Models
         public string Description { get; set; }
         public string TypeKey { get; set; }
         public string TypeKeyValue { get; set; }
+        public string Name { get; set; }
         public string Value { get; set; }
     }
 }
