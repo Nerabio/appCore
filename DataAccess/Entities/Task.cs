@@ -10,6 +10,8 @@ namespace DataAccess.Entities
         public int Id { get; set; }
         public int DeviceId { get; set; }
         public virtual Device Device { get; set; }
+
+
         public string Value { get; set; }
 
         [Timestamp]
@@ -17,5 +19,8 @@ namespace DataAccess.Entities
 
         public int TaskStatusId { get; set; }
         public virtual TaskStatus TaskStatus { get; set; }
+
+        public int SectionKeyId { get; set; }
+        public virtual SectionKey SectionKey { get; set; }
     }
 }

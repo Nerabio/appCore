@@ -18,12 +18,14 @@ namespace SmartHouse.Areas.WebApi.Controllers
     {
 
         private readonly IDeviceService _deviceService;
+        private readonly IKeyService _keyService;
         private readonly IMapper _mapper;
 
-        public DeviceController(IDeviceService deviceService, IMapper mapper)
+        public DeviceController(IDeviceService deviceService, IMapper mapper, IKeyService keyService)
         {
             _deviceService = deviceService;
             _mapper = mapper;
+            _keyService = keyService;
         }
 
         // GET: api/Device
@@ -55,6 +57,14 @@ namespace SmartHouse.Areas.WebApi.Controllers
             var device =  _deviceService.GetDevice(id);
             var dvm = _mapper.Map<DeviceViewModel>(device);
             return dvm;
+        }
+
+        [HttpGet("/api/device/{deviceId}/Input")]
+        public void Input(int deviceId, [FromQuery(Name = "vals")] string[] vals)
+        {
+            vals = new String[] { "Srction1:degree:222", "Srction1:v1:333" };
+
+            _keyService.KeyUpdate(1, vals);
         }
 
         // POST: api/Device

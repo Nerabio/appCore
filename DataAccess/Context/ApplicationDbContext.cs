@@ -103,6 +103,13 @@ namespace DataAccess.Context
                 .WithOne(t => t.Device)
                 .OnDelete(DeleteBehavior.NoAction)
                 .HasForeignKey(t => t.DeviceId);
+
+
+            modelBuilder.Entity<SectionKey>()
+                .HasMany<Task>(sk => sk.Tasks)
+                .WithOne(t => t.SectionKey)
+                .OnDelete(DeleteBehavior.NoAction)
+                .HasForeignKey(t => t.SectionKeyId);
         }
     }
 }

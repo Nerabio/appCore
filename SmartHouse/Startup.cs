@@ -65,7 +65,8 @@ namespace SmartHouse
 
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IDeviceService, DeviceService>();
-
+            services.AddTransient<ITaskService, TaskService>();
+            services.AddTransient<IKeyService, KeyService>();
 
             services.AddTransient<IHandlerFactory<IMessageParameterHandler>, HandlerFactory<IMessageParameterHandler>>();
             

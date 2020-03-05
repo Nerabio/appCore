@@ -11,5 +11,6 @@ namespace DataAccess.Entities
         public virtual Device Device { get; set; }
         public string Name { get; set; }
         public virtual IList<Key> Keys { get; set; }
+        public virtual IList<Task> Tasks { get; set; }
     }
 }
