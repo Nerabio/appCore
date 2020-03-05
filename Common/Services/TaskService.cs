@@ -21,8 +21,9 @@ namespace Common.Services
         public void CreateTask(Device device) 
         {
             var taskRepo = _unitOfWork.GetRepository<Task>();
+            var sectionRepo = _unitOfWork.GetRepository<SectionKey>();
 
-            var sections = device.SectionKey.Select(sk => new { 
+            var sections = sectionRepo.GetAll().Select(sk => new { 
                 maxKeyTimeStamp = sk.Keys.Max(k => k.TimeStamp),
                 Device = sk.Device,
                 SectionKey = sk,
