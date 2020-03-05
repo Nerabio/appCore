@@ -20,9 +20,10 @@ namespace Common.Services
 
         public void KeyUpdate(int deviceId, string[] vals) 
         {
-            
-
+            var relationRepo = _unitOfWork.GetRepository<DeviceRelation>();
+            var keyRepo = _unitOfWork.GetRepository<Key>();
             var device = _unitOfWork.GetRepository<Device>().Get(deviceId);
+
 
             foreach (string val in vals) {
                 string sectionKey = null; string keyName = null; string value = null;
@@ -35,14 +36,25 @@ namespace Common.Services
                     if (sectionKeyList.Any())
                     {
                         var section = sectionKeyList.FirstOrDefault(sk => sk.Name == sectionKey);
-                        if (section != null && section.Keys.Any())
+                        if (section != null)
                         {
                             var key = section.Keys.FirstOrDefault(k => k.Name == keyName);
                             if (key != null)
                             {
                                 key.SetValue(value);
                                 _unitOfWork.GetRepository<Key>().Update(key);
-                                
+                                //Проверяем связан ли этот ключ
+                                var relationKeys = relationRepo.FindAll(r => r.KeyOutId == key.Id).ToList();
+                                //обновляем связанный ключи если они есть
+                                if (relationKeys.Any()) {
+                                    foreach (var devKey in relationKeys)
+                                    {
+                                        var upKey = keyRepo.Get(devKey.KeyInId);
+                                        upKey.SetValue(key.GetValue());
+                                        _unitOfWork.GetRepository<Key>().Update(upKey);
+                                    }
+                                }
+
                             }
                         }
                     }
