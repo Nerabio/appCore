@@ -7,6 +7,6 @@ namespace Common.Services
 {
     public interface ITaskService
     {
-        void CreateTask(Device device);
+        void CreateTask();
     }
 }
