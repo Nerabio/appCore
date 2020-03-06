@@ -61,7 +61,7 @@ namespace Common.Services
                 }
             }
             _unitOfWork.SaveChanges();
-            _taskService.CreateTask(device);
+            _taskService.CreateTask();
         }
 
 

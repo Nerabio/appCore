@@ -18,13 +18,26 @@ namespace Common.Services
             _unitOfWork = unitOfWork;
         }
 
-        public void CreateTask(Device device) 
+        public void CreateTask() 
         {
             var taskRepo = _unitOfWork.GetRepository<Task>();
             var sectionRepo = _unitOfWork.GetRepository<SectionKey>();
 
+            //var keysRepo = _unitOfWork.GetRepository<Key>();
+
+            //var gg = 
+
+            //var dd = keysRepo.GetAll().GroupBy(k => k.SectionKeyId, (key, g) => new {
+            //    maxKeyTimeStamp = g.ToList().Max(k => k.TimeStamp),
+            //    Device = key.SectionKey.Device,
+            //    SectionKey = sk,
+            //    SectionId = sk.Id,
+            //    NameSection = sk.Name,
+            //    Keys = sk.Keys
+            //})
+
             var sections = sectionRepo.GetAll().Select(sk => new { 
-                maxKeyTimeStamp = sk.Keys.Max(k => k.TimeStamp),
+                maxKeyTimeStamp = sk.Keys != null ? sk.Keys.Max(k => k.TimeStamp) : null,
                 Device = sk.Device,
                 SectionKey = sk,
                 SectionId = sk.Id,
@@ -32,6 +45,8 @@ namespace Common.Services
                 Keys = sk.Keys
             }).ToList();
 
+           
+            /*
             foreach (var section in sections) { 
                 var taskMaxTimeStamp = taskRepo.FindAll(t=>t.SectionKeyId == section.SectionId).Max(t => t.TimeStamp);
                 bool needNewTask = StructuralComparisons.StructuralComparer.Compare(section.maxKeyTimeStamp, taskMaxTimeStamp) > 0;
@@ -49,6 +64,7 @@ namespace Common.Services
                     _unitOfWork.SaveChanges();
                 }
             }
+            */
         }
 
     }
