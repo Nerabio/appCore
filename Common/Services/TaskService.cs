@@ -18,7 +18,7 @@ namespace Common.Services
             _unitOfWork = unitOfWork;
         }
 
-        public void CreateTask(Device device) 
+        public void CreateTask() 
         {
             var taskRepo = _unitOfWork.GetRepository<Task>();
             var sectionRepo = _unitOfWork.GetRepository<SectionKey>();
