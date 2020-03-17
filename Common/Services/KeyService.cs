@@ -12,6 +12,8 @@ namespace Common.Services
         private readonly IUnitOfWork _unitOfWork;
         private readonly ITaskService _taskService;
 
+        protected List<SectionKey> changedSectionsKey = new List<SectionKey>();
+
         public KeyService(IUnitOfWork unitOfWork, ITaskService taskService)
         {
             _unitOfWork = unitOfWork;
@@ -38,6 +40,8 @@ namespace Common.Services
                         var section = sectionKeyList.FirstOrDefault(sk => sk.Name == sectionKey);
                         if (section != null)
                         {
+                            changedSectionsKey.Add(section);
+
                             var key = section.Keys.FirstOrDefault(k => k.Name == keyName);
                             if (key != null)
                             {
@@ -51,6 +55,7 @@ namespace Common.Services
                                     {
                                         var upKey = keyRepo.Get(devKey.KeyInId);
                                         upKey.SetValue(key.GetValue());
+                                        changedSectionsKey.Add(upKey.SectionKey);
                                         _unitOfWork.GetRepository<Key>().Update(upKey);
                                     }
                                 }
@@ -61,7 +66,10 @@ namespace Common.Services
                 }
             }
             _unitOfWork.SaveChanges();
-            _taskService.CreateTask();
+            //_taskService.CreateTask();
+            
+            var uniqListSectionsKey = changedSectionsKey.Distinct().ToList();
+            _taskService.CreateTaskBySections(uniqListSectionsKey);
         }
 
 

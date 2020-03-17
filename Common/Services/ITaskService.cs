@@ -8,5 +8,6 @@ namespace Common.Services
     public interface ITaskService
     {
         void CreateTask();
+        void CreateTaskBySections(List<SectionKey> sectionsKey);
     }
 }

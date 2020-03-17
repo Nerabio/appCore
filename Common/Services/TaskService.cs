@@ -18,6 +18,10 @@ namespace Common.Services
             _unitOfWork = unitOfWork;
         }
 
+
+        /// <summary>
+        /// Создаем задачи для всех изменений
+        /// </summary>
         public void CreateTask() 
         {
             var taskRepo = _unitOfWork.GetRepository<Task>();
@@ -51,5 +55,40 @@ namespace Common.Services
             }
         }
 
+
+        public void CreateTaskBySections(List<SectionKey> sectionsKey) {
+            var sections = sectionsKey.Select(sk => new {
+                maxKeyTimeStamp = sk.Keys.Max(k => k.TimeStamp),
+                Device = sk.Device,
+                SectionKey = sk,
+                SectionId = sk.Id,
+                NameSection = sk.Name,
+                Keys = sk.Keys
+            }).ToList();
+
+            var taskRepo = _unitOfWork.GetRepository<Task>();
+
+            foreach (var section in sections)
+            {
+                var taskMaxTimeStamp = taskRepo.FindAll(t => t.SectionKeyId == section.SectionId && t.TaskStatusId == 1).Max(t => t.TimeStamp);
+                bool needNewTask = StructuralComparisons.StructuralComparer.Compare(section.maxKeyTimeStamp, taskMaxTimeStamp) > 0;
+
+                if (needNewTask)
+                {
+
+                    var newTask = new Task
+                    {
+                        DeviceId = section.Device.Id,
+                        SectionKeyId = section.SectionKey.Id,
+                        TaskStatusId = (int)TaskStatusEnum.New,
+                        Value = string.Join(",", section.Keys.Select(k => k.Name + "-" + k.GetValue()).ToArray())
+                    };
+
+                    taskRepo.Add(newTask);
+                    _unitOfWork.SaveChanges();
+                }
+            }
+
+        }
     }
 }
