@@ -67,6 +67,8 @@ namespace SmartHouse.Areas.WebApi.Controllers
             _keyService.KeyUpdate(1, vals);
         }
 
+
+
         // POST: api/Device
         [HttpPost]
         public void Post([FromBody] string value)

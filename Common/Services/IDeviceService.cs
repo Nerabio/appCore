@@ -11,5 +11,6 @@ namespace Common.Services
         Device GetDevice(int deviceId);
         void DeviceTurnOff(int deviceId);
         void DeviceTurnOn(int deviceId);
+
     }
 }

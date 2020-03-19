@@ -32,6 +32,18 @@ namespace SmartHouse.Mapping
                         Value = k.GetValue()
                     }).ToList()
                 }).ToList()));
+
+
+            CreateMap<DeviceRelation, DeviceRelationsModel>()
+                .ForMember(x => x.KeyInName, opt => opt.MapFrom(src => src.KeyIn.Name))
+                .ForMember(x => x.KeyOutName, opt => opt.MapFrom(src => src.KeyOut.Name))
+                .ForMember(x => x.DeviceInName, opt => opt.MapFrom(src => src.DeviceIn.Name))
+                .ForMember(x => x.DeviceOutName, opt => opt.MapFrom(src => src.DeviceOut.Name))
+                .ForMember(x => x.DeviceInIdIsActive, opt => opt.MapFrom(src => src.DeviceIn.IsActive))
+                .ForMember(x => x.DeviceOutIsActive, opt => opt.MapFrom(src => src.DeviceOut.IsActive));
+
+            CreateMap<DeviceRelationsModel, DeviceRelation>();
+
         }
     }
 }

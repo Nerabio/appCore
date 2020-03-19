@@ -67,6 +67,7 @@ namespace SmartHouse
             services.AddTransient<IDeviceService, DeviceService>();
             services.AddTransient<ITaskService, TaskService>();
             services.AddTransient<IKeyService, KeyService>();
+            services.AddTransient<IRelationService, RelationService>();
 
             services.AddTransient<IHandlerFactory<IMessageParameterHandler>, HandlerFactory<IMessageParameterHandler>>();
             
