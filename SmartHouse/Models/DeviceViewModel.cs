@@ -12,6 +12,6 @@ namespace SmartHouse.Models
         public bool IsActive { get; set; }
         public bool IsConnected { get; set; }
         public string Name { get; set; }
-        public virtual IList<SectionKeyViewModel> SectionKey { get; set; }
+        public IList<SectionKeyViewModel> SectionKey { get; set; }
     }
 }

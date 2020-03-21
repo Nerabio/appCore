@@ -9,5 +9,7 @@ namespace Common.Services
     {
         void CreateTask();
         void CreateTaskBySections(List<SectionKey> sectionsKey);
+        IList<Task> GetTasksForDevice(int deviceId);
+        void CompleteTaskById(int taskId);
     }
 }

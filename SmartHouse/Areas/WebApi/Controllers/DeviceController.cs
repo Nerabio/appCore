@@ -33,7 +33,9 @@ namespace SmartHouse.Areas.WebApi.Controllers
         public IList<DeviceViewModel> Get()
         {
             var devicesList = _deviceService.GetDevices();
-            return devicesList.Select(d => _mapper.Map<DeviceViewModel>(d)).ToList();
+            //var model = devicesList.Select(d => _mapper.Map<DeviceViewModel>(d)).ToList();
+            var model = _mapper.Map<DeviceViewModel[]>(devicesList).ToList();
+            return model;
         }
 
 
@@ -62,9 +64,9 @@ namespace SmartHouse.Areas.WebApi.Controllers
         [HttpGet("/api/device/{deviceId}/Input")]
         public void Input(int deviceId, [FromQuery(Name = "vals")] string[] vals)
         {
-            vals = new String[] { "generalKey:num:777", "Srction1:v1:333" };
+            //vals = new String[] { "generalKey:num:777", "Srction1:v1:333" };
 
-            _keyService.KeyUpdate(1, vals);
+            _keyService.KeyUpdate(deviceId, vals);
         }
 
 

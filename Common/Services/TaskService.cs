@@ -6,6 +6,7 @@ using System.Text;
 using System.Linq;
 using System.Collections;
 using DataAccess.Enums;
+using Newtonsoft.Json;
 
 namespace Common.Services
 {
@@ -46,7 +47,8 @@ namespace Common.Services
                         DeviceId = section.Device.Id,
                         SectionKeyId = section.SectionKey.Id,
                         TaskStatusId = (int)TaskStatusEnum.New,
-                        Value = string.Join(",", section.Keys.Select(k => k.Name + "-" + k.GetValue()).ToArray())
+                        //Value = string.Join(",", section.Keys.Select(k => k.Name + "-" + k.GetValue()).ToArray())
+                        Value = JsonConvert.SerializeObject(section.Keys.Select( k => new KeyValuePair<string, string> ( k.Name, k.GetValue())))
                     };
 
                     taskRepo.Add(newTask);
@@ -57,8 +59,9 @@ namespace Common.Services
 
 
         public void CreateTaskBySections(List<SectionKey> sectionsKey) {
+
             var sections = sectionsKey.Select(sk => new {
-                maxKeyTimeStamp = sk.Keys.Max(k => k.TimeStamp),
+                maxKeyTimeStamp = sk.Keys.FirstOrDefault()?.TimeStamp, //new byte[8],
                 Device = sk.Device,
                 SectionKey = sk,
                 SectionId = sk.Id,
@@ -70,7 +73,7 @@ namespace Common.Services
 
             foreach (var section in sections)
             {
-                var taskMaxTimeStamp = taskRepo.FindAll(t => t.SectionKeyId == section.SectionId && t.TaskStatusId == 1).Max(t => t.TimeStamp);
+                var taskMaxTimeStamp = taskRepo.FindAll(t => t.SectionKeyId == section.SectionId && t.TaskStatusId == 1).FirstOrDefault()?.TimeStamp;
                 bool needNewTask = StructuralComparisons.StructuralComparer.Compare(section.maxKeyTimeStamp, taskMaxTimeStamp) > 0;
 
                 if (needNewTask)
@@ -81,7 +84,8 @@ namespace Common.Services
                         DeviceId = section.Device.Id,
                         SectionKeyId = section.SectionKey.Id,
                         TaskStatusId = (int)TaskStatusEnum.New,
-                        Value = string.Join(",", section.Keys.Select(k => k.Name + "-" + k.GetValue()).ToArray())
+                        //Value = string.Join(",", section.Keys.Select(k => k.Name + "-" + k.GetValue()).ToArray())
+                        Value = JsonConvert.SerializeObject(section.Keys.Select(k => new KeyValuePair<string, string>(k.Name, k.GetValue())))
                     };
 
                     taskRepo.Add(newTask);
@@ -89,6 +93,21 @@ namespace Common.Services
                 }
             }
 
+        }
+
+        public IList<Task> GetTasksForDevice(int deviceId) 
+        {
+            var taskRepo = _unitOfWork.GetRepository<Task>();
+            return taskRepo.FindAll(t => t.DeviceId == deviceId && t.TaskStatusId == (int)TaskStatusEnum.New).ToList();
+        }
+
+        public void CompleteTaskById(int taskId) 
+        {
+            var taskRepo = _unitOfWork.GetRepository<Task>();
+            var task = taskRepo.Find(t => t.Id ==taskId);
+            task.TaskStatusId = (int)TaskStatusEnum.Completed;
+            taskRepo.Update(task);
+            _unitOfWork.SaveChanges();
         }
     }
 }

@@ -5,10 +5,9 @@ using System.Threading.Tasks;
 
 namespace SmartHouse.Models
 {
-    public class SectionKeyViewModel
+    public class TaskViewModel
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public IList<KeyViewModel> Keys { get; set; }
+        public string Value { get; set; }
     }
 }

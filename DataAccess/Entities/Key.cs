@@ -28,9 +28,9 @@ namespace DataAccess.Entities
         public string GetValue()
         {
             switch (this.TypeKeyValueId) {
-                case (int) TypeKeyEnum.String: return this.ValueString;
-                case (int) TypeKeyEnum.Integer: return this.ValueInteger.ToString();
-                case (int) TypeKeyEnum.Boolean: return this.ValueBoolean.ToString();
+                case (int) TypeKeyValueEnum.String: return this.ValueString;
+                case (int) TypeKeyValueEnum.Integer: return this.ValueInteger.ToString();
+                case (int) TypeKeyValueEnum.Boolean: return this.ValueBoolean.ToString();
                 default: return string.Empty;
             }
         }
@@ -39,13 +39,13 @@ namespace DataAccess.Entities
         {
             switch (this.TypeKeyValueId)
             {
-                case (int)TypeKeyEnum.String:
+                case (int)TypeKeyValueEnum.String:
                     this.ValueString = value as String;
                     break;
-                case (int)TypeKeyEnum.Integer:
+                case (int)TypeKeyValueEnum.Integer:
                     this.ValueInteger = Convert.ToInt32(value);
                     break;
-                case (int)TypeKeyEnum.Boolean:
+                case (int)TypeKeyValueEnum.Boolean:
                     this.ValueBoolean = Boolean.Parse(value);
                     break;
                 default: throw new Exception("Key (TypeKeyValueId) => SetValue: failed");

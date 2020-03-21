@@ -1,10 +1,12 @@
 ﻿using AutoMapper;
 using DataAccess.Entities;
+using DataAccess.Enums;
+using Newtonsoft.Json;
 using SmartHouse.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace SmartHouse.Mapping
 {
@@ -16,23 +18,14 @@ namespace SmartHouse.Mapping
             //CreateMap<User, UserDto>();
             //CreateMap<UserDto, User>();
 
-            CreateMap<Device, DeviceViewModel>()
-                .ForMember(x => x.SectionKey, opt => opt.MapFrom(src => src.SectionKey
-                .Select(c => 
-                new SectionKeyViewModel { 
-                    Id = c.Id , 
-                    Name = c.Name, 
-                    Keys= c.Keys.Select(k => 
-                    new KeyViewModel { 
-                        Id = k.Id , 
-                        Description = k.Description, 
-                        TypeKey = k.TypeKey.Name, 
-                        TypeKeyValue = k.TypeKeyValue.Name,
-                        Name = k.Name,
-                        Value = k.GetValue()
-                    }).ToList()
-                }).ToList()));
+            CreateMap<Device, DeviceViewModel>();
 
+            CreateMap<SectionKey, SectionKeyViewModel>();
+
+            CreateMap<Key, KeyViewModel>()
+                .ForMember(x => x.TypeKey, opt => opt.MapFrom(src => this.GetTypeKey(src.TypeKeyId)))
+                .ForMember(x => x.TypeKeyValue, opt => opt.MapFrom(src => this.GetTypeKeyValue(src.TypeKeyValueId)))
+                .ForMember(x => x.Value, opt => opt.MapFrom(src => src.GetValue()));
 
             CreateMap<DeviceRelation, DeviceRelationsModel>()
                 .ForMember(x => x.KeyInName, opt => opt.MapFrom(src => src.KeyIn.Name))
@@ -44,6 +37,34 @@ namespace SmartHouse.Mapping
 
             CreateMap<DeviceRelationsModel, DeviceRelation>();
 
+            CreateMap<Task, TaskViewModel>();
         }
+
+        private string GetTypeKey(int typeKeyId) 
+        {
+            switch (typeKeyId) 
+            {
+                case (int)TypeKeyEnum.Out: return "out";
+                case (int)TypeKeyEnum.In: return "in";
+                default: return "unknown";
+            }
+        }
+
+        private string GetTypeKeyValue(int typeKeyValueId)
+        {
+            switch (typeKeyValueId)
+            {
+                case (int)TypeKeyValueEnum.String: return "string";
+                case (int)TypeKeyValueEnum.Integer: return "integer";
+                case (int)TypeKeyValueEnum.Boolean: return "boolean";
+                default: return "unknown";
+            }
+        }
+
+        //private string TaskToJson(Task task) 
+        //{
+        //    string json = JsonConvert.SerializeObject(product);
+        //}
+
     }
 }
