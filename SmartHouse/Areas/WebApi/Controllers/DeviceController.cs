@@ -61,32 +61,29 @@ namespace SmartHouse.Areas.WebApi.Controllers
             return dvm;
         }
 
-        [HttpGet("/api/device/{deviceId}/Input")]
-        public void Input(int deviceId, [FromQuery(Name = "vals")] string[] vals)
+        [HttpGet("/api/device/{guidStr}/Input")]
+        public void Input(string guidStr, [FromQuery(Name = "vals")] string[] vals)
         {
             //vals = new String[] { "generalKey:num:777", "Srction1:v1:333" };
-
-            _keyService.KeyUpdate(deviceId, vals);
+            var device = _deviceService.getDeviceByGuid(guidStr);
+            _keyService.KeyUpdate(device.Id, vals);
         }
 
 
-
-        // POST: api/Device
-        [HttpPost]
-        public void Post([FromBody] string value)
+        [HttpPost("/api/device/init")]
+        public void Init(Device device)
         {
+            _deviceService.CreateOrUpdateDevice(device);
         }
 
-        // PUT: api/Device/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+
+        [HttpGet("/api/device/getChangedKeys")]
+        public IList<KeyViewModel> GetChangedKeys()
         {
+            var keys = _keyService.GetChangedKeys();
+            var modelKeys = _mapper.Map<KeyViewModel[]>(keys);
+            return modelKeys;
         }
 
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }

@@ -11,6 +11,7 @@ namespace DataAccess.Entities
         public bool IsActive { get; set; }
         public bool IsConnected { get; set; }
         public string Name { get; set; }
+        public string Guid { get; set; }
 
         public virtual IList<SectionKey> SectionKey { get; set; }
 

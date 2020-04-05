@@ -49,5 +49,71 @@ namespace Common.Services
         }
 
 
+        public Device getDeviceByGuid(string guidStr)
+        {
+            return _unitOfWork
+                .GetRepository<Device>()
+                .Find(d => d.Guid == guidStr);
+        }
+
+        private Device CreateDevice(Device device)
+        {
+            device.IsActive = true;
+            device.IsConnected = true;
+            _unitOfWork.GetRepository<Device>().Add(device);
+            _unitOfWork.SaveChanges();
+            return device;
+        }
+
+        private Device UpdateDevice(Device oldDevice, Device newDevice)
+        {
+            if (oldDevice.Name != newDevice.Name) oldDevice.Name = newDevice.Name;
+
+            if (newDevice.SectionKey.Any())
+            {
+                foreach (var section in newDevice.SectionKey) {
+                    var oldSk = oldDevice.SectionKey.FirstOrDefault(sk => sk.Name == section.Name);
+                    if (oldSk != null)
+                    {                    
+                        foreach (var newKey in section.Keys)
+                        {
+                            var oldKey =  oldSk.Keys.FirstOrDefault(k => k.Name == newKey.Name);
+                            if (oldKey != null)
+                            {
+                                oldKey.TypeKeyId = newKey.TypeKeyId;
+                                oldKey.TypeKeyValueId = newKey.TypeKeyValueId;
+                                oldKey.SetValue(newKey.GetValue());
+                            }
+                            else{
+                                oldSk.Keys.Add(newKey);
+                            }
+                        }
+                    }
+                    else 
+                    {
+                        oldDevice.SectionKey.Add(section);
+                    }
+                }
+
+            }
+            _unitOfWork.GetRepository<Device>().Update(oldDevice);
+            _unitOfWork.SaveChanges();
+            return oldDevice;
+        }
+
+        public void CreateOrUpdateDevice(Device newDevice)
+        {
+            var oldDevice = this.getDeviceByGuid(newDevice.Guid);
+            if (oldDevice == null)
+            {
+                this.CreateDevice(newDevice);
+            }
+            else{
+                this.UpdateDevice(oldDevice, newDevice);
+            }
+
+        }
+
+
     }
 }

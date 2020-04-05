@@ -39,19 +39,17 @@ namespace SmartHouse.Controllers
         public IActionResult Index()
         {
 
-            var device = _unitOfWork.GetRepository<Device>().Get(1);
-            var sectionKeyList = device.SectionKey;
-
-            var key = sectionKeyList.FirstOrDefault().Keys.FirstOrDefault(k => k.Id == 1);
-
-            var valueStr = key.GetValue();
+            //var device = _unitOfWork.GetRepository<Device>().Get(1);
+            //var sectionKeyList = device.SectionKey;
+            //var key = sectionKeyList.FirstOrDefault().Keys.FirstOrDefault(k => k.Id == 1);
+            //var valueStr = key.GetValue();
 
 
             //key.SetValue("false");
             //key.ValueString = "123";
 
-            _unitOfWork.GetRepository<Key>().Update(key);
-            _unitOfWork.SaveChanges();
+            //_unitOfWork.GetRepository<Key>().Update(key);
+            //_unitOfWork.SaveChanges();
 
             //var sk = _unitOfWork.GetRepository<SectionKey>().Get(1);
 

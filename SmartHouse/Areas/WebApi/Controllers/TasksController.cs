@@ -27,10 +27,12 @@ namespace SmartHouse.Areas.WebApi.Controllers
             _taskService = taskService;
         }
 
-        [HttpGet("/api/tasks/get/{deviceId}")]
-        public IList<TaskViewModel> GetTasks(int deviceId)
+        [HttpGet("/api/tasks/get/{guidStr}")]
+        public IList<TaskViewModel> GetTasks(string guidStr)
         {
-            var tasks = _taskService.GetTasksForDevice(deviceId);
+            var device = _deviceService.getDeviceByGuid(guidStr);
+            if (device == null) throw new KeyNotFoundException("device not found guid: "+ guidStr); 
+            var tasks = _taskService.GetTasksForDevice(device.Id);
             var model = _mapper.Map<TaskViewModel[]>(tasks).ToList();
             return model;
         }

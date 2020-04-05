@@ -37,7 +37,7 @@ namespace DataAccess.Context
             optionsBuilder
                 .UseLazyLoadingProxies()
                 .ConfigureWarnings(warnings => warnings.Ignore(CoreEventId.DetachedLazyLoadingWarning))
-                .UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=helloappdb;Trusted_Connection=True;");
+                .UseSqlServer("Data Source=HELIOS;Initial Catalog=Devices;Persist Security Info=True;User ID=sa;Password=saadmin");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -91,6 +91,10 @@ namespace DataAccess.Context
                 .WithOne(dr => dr.KeyOut)
                 .OnDelete(DeleteBehavior.NoAction)
                 .HasForeignKey(dr => dr.KeyOutId);
+
+            //modelBuilder.Entity<Key>()
+            //    .Property(k => k.DateCreated)
+            //    .ValueGeneratedOnUpdate();
 
             modelBuilder.Entity<Task>()
                 .HasOne<TaskStatus>(t => t.TaskStatus)

@@ -73,5 +73,11 @@ namespace Common.Services
         }
 
 
+
+        public IList<Key> GetChangedKeys() {
+            var keys = _unitOfWork.GetRepository<Key>().FindAll(k =>k.DateCreated >= (DateTime.Now.AddMinutes(-1)));
+            return keys.ToList();
+        }
+
     }
 }

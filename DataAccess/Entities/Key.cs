@@ -23,6 +23,8 @@ namespace DataAccess.Entities
 
         [Timestamp]
         public byte[] TimeStamp { get; set; }
+
+        public DateTime DateCreated { get; set; }
         public virtual IList<DeviceRelation> RelationOut { get; set; }
         public virtual IList<DeviceRelation> RelationIn { get; set; }
         public string GetValue()
@@ -37,6 +39,7 @@ namespace DataAccess.Entities
 
         public void SetValue(string value) 
         {
+            this.DateCreated = DateTime.Now;
             switch (this.TypeKeyValueId)
             {
                 case (int)TypeKeyValueEnum.String:

@@ -136,6 +136,29 @@ namespace DataAccess.Migrations
                 name: "IX_SectionKeys_DeviceId",
                 table: "SectionKeys",
                 column: "DeviceId");
+
+
+//            INSERT INTO[dbo].[TypeKeyValues]
+//        ([Name])
+//VALUES
+//('String'),
+//('Integer'),
+//('Boolean')
+
+
+//INSERT INTO[dbo].[TypeKeys]
+//        ([Name])
+//VALUES
+//('Out'),
+//('In')
+
+//INSERT INTO[dbo].[TaskStatus]
+//        ([Name])
+//VALUES
+//('New'),
+//('Completed'),
+//('Error'),
+//('Timeout')
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
